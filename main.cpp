@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-  float compras, atraso, ticket, pontosv, pontosi, pontosfp, pagamento, scorev,scorei, scorefp, classfinal, D, B, C;
+  float compras, atraso, ticket, pontosv, pontosi, pontosfp, pagamento, scorev,scorei, scorefp, classfinal, D, B, C, somapontos;
   scorev = 0;
   scorei = 0;
   scorefp = 0;
@@ -57,7 +57,15 @@ int main() {
  cout << " " << endl;
  cout << "Score de inadiplência = " << pontosi << endl;
  cout << "Score de forma de pagamento = " << pontosfp << endl;
+ somapontos = pontosi + pontosv + pontosfp;
+ if(somapontos == 0 || somapontos < 25)
  cout << " " << endl;
- cout << "Classificação final = " << classfinal << endl;
+ if(somapontos == 0 || somapontos < 25)
+ cout << "Classificação final: Bronze" << endl;
+ if(somapontos > 25 || somapontos <= 75)
+ cout << "Classificação final: Prata" << endl;
+ if(somapontos < 75)
+ cout << "Classificação final: Ouro" << endl;
 
+return 0;
 }
